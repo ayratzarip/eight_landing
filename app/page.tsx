@@ -285,7 +285,7 @@ export default function Home() {
                     style={{ padding: "57.63% 0 0 0", position: "relative" }}
                   >
                     <iframe
-                      src="https://player.vimeo.com/video/1059455108?h=33d55d43f5&badge=0&autopause=0&player_id=0&app_id=58479"
+                      src="https://kinescope.io/6vv6hRtFx2jfpacPPqcxtA/plNSRF50"
                       frameBorder="0"
                       allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
                       style={{
