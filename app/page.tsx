@@ -5,10 +5,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import { useEffect } from 'react';
+import { useEffect } from "react";
 import {
-  Youtube,
-  Send,
   ChevronRight,
   CheckCircle2,
   CircleX,
@@ -543,19 +541,36 @@ export default function Home() {
               Следите за обновлениями проекта
             </h2>
             <div className="flex justify-center gap-6">
-              <a
-                href="#"
-                className="p-3 rounded-full bg-red-600 text-white hover:bg-red-700 transition-colors"
-              >
-                <Youtube className="w-6 h-6" />
+              <a href="https://www.youtube.com/channel/UCwjnKYW9b235uAMLvKuPqhA" target="_blank" rel="noopener noreferrer" className="p-3 hover:opacity-80 transition-opacity">
+                <Image
+                  src="/assets/youtube.png"
+                  alt="YouTube"
+                  width={36}
+                  height={36}
+                  className="w-12 h-12"
+                />
               </a>
-              <a
-                href="#"
-                className="p-3 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-colors"
-              >
-                <Send className="w-6 h-6" />
+              <a href="https://t.me/+L5oIC8LSCb0zMWMy" target="_blank" rel="noopener noreferrer" className="p-3 hover:opacity-80 transition-opacity">
+                <Image
+                  src="/assets/telegram.png"
+                  alt="Telegram"
+                  width={36}
+                  height={36}
+                  className="w-12 h-12"
+                />
               </a>
             </div>
+            <p className="mt-4 text-center text-gray-700">
+              Остались вопросы?{' '}
+              <a
+                href="https://t.me/eightfaces_bot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 underline hover:text-blue-800"
+              >
+                Напишите нам в Telegram
+              </a>
+            </p>
           </div>
           <div className="max-w-5xl mx-auto text-center">
             <p className="text-gray-600 text-lg mt-8 mb-6 text-justify border-b"></p>
