@@ -14,11 +14,10 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import { useRouter } from "next/navigation"; // Add this import
+
 import { Footer } from "@/components/ui/footer";
 
 export default function Home() {
-  const router = useRouter(); // Add this line
   const [isChecked, setIsChecked] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -108,7 +107,9 @@ export default function Home() {
                 Статьи
               </Link>
               <button
-                onClick={() => scrollToSection("start")}
+                onClick={() =>
+                  (window.location.href = "https://lessons.eightfaces.ru")
+                }
                 className="px-4 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors"
               >
                 Подключиться к проекту
@@ -147,7 +148,9 @@ export default function Home() {
               Статьи
             </Link>
             <button
-              onClick={() => scrollToSection("start")}
+              onClick={() =>
+                (window.location.href = "https://lessons.eightfaces.ru")
+              }
               className="px-4 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors"
             >
               Подключиться
@@ -269,7 +272,7 @@ export default function Home() {
           className="py-32"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(243, 244, 246, 0.8), rgba(243, 244, 246, 0.8)), url(/assets/speaking.png)",
+              "linear-gradient(rgba(243, 244, 246, 0.8), rgba(243, 244, 246, 0.8)), url(/assets/gangs.png)",
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundAttachment: "fixed",
@@ -541,7 +544,12 @@ export default function Home() {
               Следите за обновлениями проекта
             </h2>
             <div className="flex justify-center gap-6">
-              <a href="https://www.youtube.com/channel/UCwjnKYW9b235uAMLvKuPqhA" target="_blank" rel="noopener noreferrer" className="p-3 hover:opacity-80 transition-opacity">
+              <a
+                href="https://www.youtube.com/channel/UCwjnKYW9b235uAMLvKuPqhA"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 hover:opacity-80 transition-opacity"
+              >
                 <Image
                   src="/assets/youtube.png"
                   alt="YouTube"
@@ -550,7 +558,12 @@ export default function Home() {
                   className="w-12 h-12"
                 />
               </a>
-              <a href="https://t.me/+L5oIC8LSCb0zMWMy" target="_blank" rel="noopener noreferrer" className="p-3 hover:opacity-80 transition-opacity">
+              <a
+                href="https://t.me/+L5oIC8LSCb0zMWMy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 hover:opacity-80 transition-opacity"
+              >
                 <Image
                   src="/assets/telegram.png"
                   alt="Telegram"
@@ -561,7 +574,7 @@ export default function Home() {
               </a>
             </div>
             <p className="mt-4 text-center text-gray-700">
-              Остались вопросы?{' '}
+              Остались вопросы?{" "}
               <a
                 href="https://t.me/eightfaces_bot"
                 target="_blank"
@@ -600,58 +613,99 @@ export default function Home() {
 
         {/* CTA Section */}
         <section
-          id="start"
-          className="relative py-16"
+          id="applications"
+          className="relative py-20 md:py-28"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url(/assets/gangs.png)",
+              "linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url(/assets/speaking.png)",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         >
           <div className="container mx-auto px-4">
-            <div className="max-w-2xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-8 text-white">
-                Начнем меняться к лучшему?
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-white text-3xl font-bold text-center mb-12">
+                Дополнения к проекту
               </h2>
-              <div className="flex items-center justify-center gap-2 mb-6">
-                <input
-                  type="checkbox"
-                  id="terms"
-                  className="w-4 h-4"
-                  checked={isChecked}
-                  onChange={(e) => setIsChecked(e.target.checked)}
-                />
-                <label htmlFor="terms" className="text-sm text-gray-300">
-                  Я соглашаюсь с{" "}
-                  <Link href="/terms" className="underline">
-                    пользовательским соглашением
-                  </Link>{" "}
-                  и{" "}
-                  <Link href="/privacy" className="underline">
-                    политикой конфиденциальности
-                  </Link>
-                </label>
+              <p
+                className="text-gray-400 mb-12"
+                style={{ textAlign: "center" }}
+              >
+                Чтобы помочь вам эффективно применять полученные знания, мы
+                разработали мобильное приложение. В нем вы сможете вести
+                дневник самонаблюдения и отслеживать выполнение шагов на пути к
+                поставленной цели. <br />
+                Рекомендуется скачать и установить приложение до начала первого урока.{" "}
+                <br />
+                Приложение бесплатно и доступно для iOS и Android.
+              </p>
+            </div>
+            <div className="max-w-2xl mx-auto text-center">
+              <div className="flex items-center justify-center gap-6 flex-wrap">
+                <a
+                  href="https://apps.apple.com/app/idXXXXXXXXX"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-transform hover:scale-105"
+                >
+                  <Image
+                    src="/assets/appstore.png"
+                    alt="App Store"
+                    width={140}
+                    height={42}
+                    className="w-36 sm:w-28 h-auto"
+                    priority
+                  />
+                </a>
+                <a
+                  href="https://play.google.com/store/apps/details?id=XXXXXXXXX"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-transform hover:scale-105"
+                >
+                  <Image
+                    src="/assets/googleplay.png"
+                    alt="Google Play"
+                    width={140}
+                    height={42}
+                    className="w-36 sm:w-28 h-auto"
+                    priority
+                  />
+                </a>
               </div>
+            </div>
+          </div>
+          
+        </section>
+
+        <section
+          id="start"
+          className="bg-gray-900 py-1"
+          style={{
+            paddingTop: "4rem",
+          }}
+        >
+          <div className="container mx-auto px-4">
+            <div className="max-w-2xl mx-auto text-center">
               <button
-                className={`flex items-center justify-center gap-2 mx-auto px-8 py-4 text-white rounded-full text-lg font-semibold transition-all
-                  ${
-                    isChecked
-                      ? "bg-green-600 hover:bg-green-700 cursor-pointer"
-                      : "bg-gray-600 cursor-not-allowed"
-                  }`}
-                disabled={!isChecked}
-                onClick={() => isChecked && router.push("/lessons")}
+                className="flex items-center justify-center gap-2 mx-auto px-4 py-2 bg-green-600 text-white rounded-full hover:bg-green-700 transition-colors font-semibold mb-6"
+                onClick={() =>
+                  (window.location.href = "https://lessons.eightfaces.ru")
+                }
               >
                 Подключиться к проекту
                 <ChevronRight className="w-5 h-5" />
               </button>
-              <div className="flex items-center justify-center gap-2 mt-4 text-gray-400 text-sm">
-                <Shield className="w-4 h-4" />
-                <span>
-                  Мы используем сквозное шифрование. Ваши данные защищены
-                </span>
-              </div>
+              <p className="text-sm text-gray-400">
+                Продолжая, Вы соглашаетесь с нашим{" "}
+                <Link href="/terms" className="underline">
+                  пользовательским соглашением
+                </Link>{" "}
+                и{" "}
+                <Link href="/privacy" className="underline">
+                  политикой конфиденциальности
+                </Link>
+              </p>
             </div>
           </div>
         </section>
